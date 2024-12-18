@@ -1,0 +1,275 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JM" crossorigin="anonymous">
+    <title>Muria Food</title>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="avatar">
+            <img src="../asset/user.jpg" alt="">
+            <h1 class="nama">Yunita</h1>
+            <hr class="line-avatar">
+        </div>
+        
+        <div class="sidebar-menus">
+            <a href="#"><ion-icon name="storefront-outline"></ion-icon>Beranda</a>
+            <a href="../pesanan/pesanan.html"><ion-icon name="receipt-outline"></ion-icon>Pesanan</a>
+            <a href="#"><ion-icon name="wallet-outline"></ion-icon>Pembayaran</a>
+            <a href="#"><ion-icon name="notifications-outline"></ion-icon>team</a>
+            <a href="#"><ion-icon name="reader-outline"></ion-icon>Riwayat</a>
+            <a href="#"><ion-icon name="settings-outline"></ion-icon>setting</a>
+        </div>
+        
+        <div class="sidebar-logout">
+            <a href="../index.html"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+        </div> 
+
+    </div>
+
+    <div class="main">
+        <div class="main-navbar">
+            <ion-icon class="menu-toggle" name="menu-outline"></ion-icon>
+            <div class="search">
+                <input type="text" placeholder="mau makan apa ketua?">
+                <button class="search-btn">search</button>   
+            </div>
+
+            <div class="profile">
+                <a class="cart" href="#" onclick="toggleCartPopup()">
+                <ion-icon name="cart-outline"></ion-icon>
+                <span class="cart-count" id="cart-count">0</span>
+                </a>
+                <a class="user" href="#"><ion-icon name="person-outline"></ion-icon></a>
+            </div>
+        </div>
+
+        <div id="cart-popup" class="cart-popup">
+            <h4>Keranjang</h4>
+            <table id="cart-items">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>#</th>
+                        <th>Harga(Rp)</th>
+                        <th>Total(Rp)</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <p>Total(Rp) <span id="cart-total">0.00</span></p>
+            <a class="cart-close" onclick="closeCart()"><ion-icon name="close-circle-outline"></ion-icon></a>
+        </div>
+
+        <!--Rekomendasi-->
+        <div class="main-highlight">
+            <div class="main-header">
+                <h2 class="main-title">Sedang Populer</h2>
+                <div class="main-arrow">
+                    <ion-icon class="back" name="chevron-back-circle-outline"></ion-icon>
+                    <ion-icon class="next" name="chevron-forward-circle-outline"></ion-icon> 
+                </div>
+            </div>
+
+            <div class="highlight-wrapper">
+                <div class="highlight-card">
+                    <img class="highlight-img" src="../asset/salad.jpg">
+                    <div class="highlight-desc">
+                        <h4>Salad</h4>
+                        <p>Rp.15.000</p>
+                    </div>  
+                </div>  
+
+                <div class="highlight-card">
+                    <img class="highlight-img" src="../asset/Sate Madura.jpg">
+                    <div class="highlight-desc">
+                        <h4>Sate Madura</h4>
+                        <p>Rp.12.000</p>
+                    </div>
+                </div>
+                
+                <div class="highlight-card">
+                    <img class="highlight-img" src="../asset/bakso.jpg">
+                    <div class="highlight-desc">
+                        <h4>Bakso</h4>
+                        <p>Rp.15.000</p>
+                    </div>
+                </div>
+
+                <div class="highlight-card">
+                    <img class="highlight-img" src="../asset/nasgor.jpg">
+                    <div class="highlight-desc">
+                        <h4>Nasi Goreng</h4>
+                        <p>Rp.12.000</p>
+                    </div>
+                </div>
+
+                <div class="highlight-card">
+                    <img class="highlight-img" src="../asset/nasgor.jpg">
+                    <div class="highlight-desc">
+                        <h4>Nasi Goreng</h4>
+                        <p>Rp.12.000</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- menu kategori -->
+        <div class="main-menus">
+            <div class="main-filter">
+                <div>
+                    <h2 class="main-title">menu <br>category</h2>
+                </div>
+                    <div class="filter-wrapper">
+                        <div class="filter-card">
+                            <div class="filter-icon">
+                                <ion-icon name="restaurant-outline"></ion-icon>
+                            </div>
+                            <p>All Menus</p>
+                        </div>
+                        <div class="filter-card">
+                            <div class="filter-icon">
+                                <ion-icon name="fast-food-outline"></ion-icon>
+                            </div>
+                            <p>Burger</p>
+                        </div>
+                        <div class="filter-card">
+                            <div class="filter-icon">
+                                <ion-icon name="pizza-outline"></ion-icon>
+                            </div>
+                            <p>Pizza</p>
+                        </div>
+                        <div class="filter-card">
+                            <div class="filter-icon">
+                                <ion-icon name="wine-outline"></ion-icon>
+                            </div>
+                            <p>wine</p>
+                        </div>
+                        <div class="filter-card">
+                            <div class="filter-icon">
+                                <ion-icon name="ice-cream-outline"></ion-icon>
+                            </div>
+                            <p>Ice Cream</p>
+                        </div>
+                        <div class="filter-card">
+                            <div class="filter-icon">
+                                <ion-icon name="cafe-outline"></ion-icon>
+                            </div>
+                            <p>Coffee</p>
+                        </div>
+                        <div class="filter-card">
+                            <div class="filter-icon">
+                                <ion-icon name="fish-outline"></ion-icon>
+                            </div>
+                            <p>Seafood</p>
+                        </div>
+                        <div class="filter-card">
+                            <div class="filter-icon">
+                                <ion-icon name="nutrition-outline"></ion-icon>
+                            </div>
+                            <p>Healthy</p>
+                        </div>
+                    </div>   
+            </div>
+            <hr class="devider">
+
+        <!--List Menu-->
+            <div class="main-detail">
+                <h2 class="main-title">Pilih Makanan mu</h2>
+                <div class="detail-wrapper">
+                    <div class="detail-card">
+                        <img class="detail-img" src="../asset/combor.jpg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Bakso Combor</h4>
+                                <p class="detail-sub">bakso dengan kuah yang melimpah hingga memenuhi mangkuknya.</p>
+                                <p class="price">Rp13.000</p>
+                                <button class="add-to-cart-btn" onclick="addToCart('Bakso Combor', 13.000)">Pesan</button>
+                            </div>
+                            <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
+                        </div> 
+                    </div>
+
+                    <div class="detail-card">
+                        <img class="detail-img" src="../asset/combor.jpg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Bakso Combor</h4>
+                                <p class="detail-sub">bakso dengan kuah yang melimpah hingga memenuhi mangkuknya.</p>
+                                <p class="price">Rp13.000</p>
+                                <button class="add-to-cart-btn" onclick="addToCart('Bakso Combor', 13.000)">Pesan</button>
+                            </div>
+                            <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
+                        </div> 
+                    </div>
+
+                    <div class="detail-card">
+                        <img class="detail-img" src="../asset/combor.jpg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Bakso Combor</h4>
+                                <p class="detail-sub">bakso dengan kuah yang melimpah hingga memenuhi mangkuknya.</p>
+                                <p class="price">Rp13.000</p>
+                                <button class="add-to-cart-btn" onclick="addToCart('Bakso Combor', 13.000)">Pesan</button>
+                            </div>
+                            <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
+                        </div> 
+                    </div>
+
+                    <div class="detail-card">
+                        <img class="detail-img" src="../asset/combor.jpg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Bakso Combor</h4>
+                                <p class="detail-sub">bakso dengan kuah yang melimpah hingga memenuhi mangkuknya.</p>
+                                <p class="price">Rp13.000</p>
+                                <button class="add-to-cart-btn" onclick="addToCart('Bakso Combor', 13.000)">Pesan</button>
+                            </div>
+                            <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
+                        </div> 
+                    </div>
+
+                    <div class="detail-card">
+                        <img class="detail-img" src="../asset/combor.jpg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Bakso Combor</h4>
+                                <p class="detail-sub">bakso dengan kuah yang melimpah hingga memenuhi mangkuknya.</p>
+                                <p class="price">Rp13.000</p>
+                                <button class="add-to-cart-btn" onclick="addToCart('Bakso Combor', 13.000)">Pesan</button>
+                            </div>
+                            <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
+                        </div> 
+                    </div>
+
+                    <div class="detail-card">
+                        <img class="detail-img" src="../asset/combor.jpg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Bakso Combor</h4>
+                                <p class="detail-sub">bakso dengan kuah yang melimpah hingga memenuhi mangkuknya.</p>
+                                <p class="price">Rp13.000</p>
+                                <button class="add-to-cart-btn" onclick="addToCart('Bakso Combor', 13.000)">Pesan</button>
+                            </div>
+                            <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
+                        </div> 
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!--js-->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="script.js"></script>
+</html>

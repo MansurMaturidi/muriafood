@@ -1,0 +1,216 @@
+:root{
+    --primaryColor :#e06717;
+    --secondaryColor: #edc31c;
+    --whiteColor: #fff;
+    --blackColor: #222;
+    --softGreenColor: #d9dddc;
+    --darkGreyColor: #d9dddc;
+    --greyColor : #f5f5f5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+/* Container avatar */
+/* Container avatar */
+.avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 25vh; /* Tinggi penuh layar */
+}
+
+/* Styling gambar agar ukurannya selalu konsisten */
+.avatar img {
+    width: 100px; /* Ukuran tetap */
+    height: 100px; /* Ukuran tetap */
+    border-radius: 50%; /* Membuat gambar selalu lingkaran */
+    object-fit: cover; /* Potong gambar agar sesuai bingkai */
+    object-position: center; /* Posisi gambar selalu di tengah */
+    margin-bottom: 0.1rem; /* Jarak antara gambar dan teks */
+    border: 2px solid var(--primaryColor, #333); /* Tambahkan garis tepi jika diperlukan */
+}
+
+/* Styling teks/logo */
+.avatar .nama {
+    font-size: 2.5rem; /* Ukuran teks */
+    font-weight: bold;
+    color: var(--whiteColor, #333);
+}
+.line-avatar {
+    width: 100%; /* Panjang garis (50% dari lebar parent) */
+    height: 2px; /* Ketebalan garis */
+    background-color: var(--whiteColor); /* Warna garis */
+    margin: 1rem auto; /* Jarak dan posisi tengah */
+}
+
+
+
+.sidebar {
+    height: 100%;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 2%;
+    background-color: var(--primaryColor);
+    color: var(--whiteColor);
+}
+
+.sidebar-menus {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-menus a, .sidebar-logout a {
+    padding: 5% 8%;
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    text-decoration: none;
+    color: var(--whiteColor)
+}
+
+.sidebar-menus a ion-icon , .sidebar-logout a ino-icon {
+    font-size: 20px;
+}
+
+.sidebar-menus a:hover , .sidebar-logout a:hover{
+    background-color: var(--secondaryColor);
+    border-radius: 50px;
+}
+
+.main{
+    width: 100%;
+    height: max-content;
+    min-height: 100vh;
+    padding: 2%;
+    background-color: var(--softGreenColor);
+    margin-left: 250px;
+}
+
+.main-navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-toggle{
+    display: none;
+}
+
+.search{
+    width: 60%;
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--whiteColor);
+    border-radius: 20px;
+}
+
+.search input{
+    width: 80%;
+    height: 100%;
+    padding: 20px;
+    border: none;
+    border-radius: 20px;
+}
+
+.search-btn {
+    background-color: var(--secondaryColor);
+    color: var(--whiteColor);
+    border: none;
+    border-radius: 20px;
+    width: 120px;
+    cursor: pointer;
+} 
+
+.search:hover {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.search-btn:hover{
+    background-color: var(--primaryColor);
+}
+
+.profile{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cart, .user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--whiteColor);
+    font-size: 20px;
+    color: var(--primaryColor);
+    text-decoration: none;
+    padding: 0 10px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.cart:hover , .user:hover {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+
+/* display HP*/
+
+@media screen and (max-width:640px) {
+    .sidebar {
+        display: none;
+    }
+    .main {
+        margin-left: 0;
+    }
+    .menu-toggle {
+        display: block;
+        text-decoration: none;
+        font-size: 20px;
+        background-color: var(--whiteColor);
+        color: var(--primaryColor);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 10px;
+        height: 40px;
+        border-radius: 50%;
+        z-index: 3;
+    }
+    .sidebar.active {
+        display: flex;
+        z-index: 10;
+    }
+    .highlight-wrapper {
+        overflow: scroll;
+        padding-bottom: 15px; /* Menambah jarak di bawah konten */
+    }
+    .filter-wrapper {
+        overflow-x: scroll;
+        padding-bottom: 15px; /* Menambah jarak di bawah konten */
+    }
+    .main-arrow {
+        display: none;
+    }
+}

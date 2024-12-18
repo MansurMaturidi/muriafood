@@ -1,0 +1,80 @@
+/* Mengatur layout dan tampilan flash screen */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f8f9fa; /* Warna latar belakang */
+  }
+  
+  .flash-screen {
+    text-align: center;
+  }
+  
+/* Mengatur layout dan tampilan flash screen */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #ff5722; /* Warna orange ala Shopee */
+  }
+  
+  .flash-screen {
+    text-align: center;
+    animation: fadeIn 2s ease-in-out; /* Animasi fade-in untuk seluruh elemen flash-screen */
+  }
+  
+  .flash-screen .logo {
+    max-width: 200px; /* Mengatur ukuran maksimum logo */
+    height: auto;
+    border-radius: 10px; /* Opsional: Membuat sudut logo membulat */
+    animation: bounce 2s infinite; /* Animasi bounce pada logo */
+  }
+  
+  .flash-screen h1 {
+    font-size: 2rem;
+    color: #fff; /* Warna teks putih agar kontras dengan background */
+    font-weight: bold;
+    margin-top: 20px;
+    animation: slideUp 1.5s ease-out; /* Animasi teks bergerak ke atas */
+  }
+  
+  /* Animasi fade-in untuk flash-screen */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Animasi bounce untuk logo */
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-20px); /* Gerakan ke atas */
+    }
+    60% {
+      transform: translateY(-10px); /* Gerakan ke atas lebih kecil */
+    }
+  }
+  
+  /* Animasi teks bergerak ke atas */
+  @keyframes slideUp {
+    from {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  
